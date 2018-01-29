@@ -1,1 +1,1 @@
-export const CLIENT_URL = 'https://whispering-brook-24620.herokuapp.com/people'
+export const CLIENT_URL = 'https://lit-swap.herokuapp.com/books'
