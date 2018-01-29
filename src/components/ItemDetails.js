@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
 
-const ItemDetails = () => {
+const ItemDetails = (props) => {
+    console.log(props)
     return (
-        <h1>Hello Item Details</h1>
+        <div>
+            {props.location.state.book.title}
+        </div>
     )
 }
 

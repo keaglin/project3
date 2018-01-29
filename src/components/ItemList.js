@@ -1,4 +1,5 @@
-import React from 'react'
+import React  from 'react'
+import {Link} from 'react-router-dom'
 
 const ItemList = (props) => {
   const books = props.books
@@ -7,7 +8,13 @@ const ItemList = (props) => {
       <ul>
       {
         books.map((book, index) => {
-            return <li key={index}><a href={`/books/${book.title}`}>{book.title}</a></li>
+            return <li key={index}>
+            <Link to = {{
+              pathname: `/books/${book.title}`, 
+              state: {book:book}
+            }}> {book.title} 
+            </Link>
+           </li>
         })
       }
       </ul>
