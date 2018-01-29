@@ -16,8 +16,8 @@ class App extends Component {
       <Header />
         <Switch>
           <Route exact path='/' render={() => (<Landing />)}/>
-          <Route exact path='/books' render={() => (<ItemList books={books}/>)}/>
-          <Route path='/books/:title' render={() => (<ItemDetails />)} />
+          <Route exact path='/books' render={(props) => (<ItemList books={books} {...props}/>)}/>
+          <Route path='/books/:title' render={(props) => (<ItemDetails {...props}/>)} />
           <Route exact path='/users' render={() => (<UserAuth />)} />
           <Route path='/*' render={() => (<Landing />)} />
         </Switch>
