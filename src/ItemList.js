@@ -1,8 +1,18 @@
 import React, { Component } from 'react'
 
-const ItemList = () => {
+
+const ItemList = (props) => {
+    const books = props.books
     return (
-        <h1>Hello Item List</h1>
+        <div>
+            <ul>
+            {
+                books.map((book, index) => {
+                    return <li key={index}> {book.title} </li>
+                })
+            }
+            </ul>
+        </div>
     )
 }
 
