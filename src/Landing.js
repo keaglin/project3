@@ -5,7 +5,8 @@ const Landing = () => {
         <div>
             <h1>litswap</h1>
             <h2>Your swapping dreams!</h2>
-            <button className='enter-button'>Enter</button>
+            <a href='/users'>Login/signup</a>
+            {/* <button className='enter-button'>Enter</button> */}
         </div>
     ) 
 }
