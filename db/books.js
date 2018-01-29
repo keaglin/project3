@@ -1,4 +1,4 @@
-[
+const books = [
   {    
       "title": "Search For Delicious",
       "author": "Someone",
@@ -33,3 +33,5 @@
   }
   
 ]
+
+export default books
