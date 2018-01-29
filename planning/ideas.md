@@ -14,5 +14,6 @@ Available Item Detail
 Swap
 
 <small>MAYBE</small>
+User avatars
 User detail view with user details and items owned
 past swaps? 
