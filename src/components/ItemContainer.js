@@ -1,5 +1,5 @@
 import React, { Component }   from 'react'
-import {CLIENT_URL }          from '../constants'
+import { CLIENT_URL }         from '../constants'
 import ItemList               from './ItemList'
 import axios                  from 'axios'
 import {Link}                 from 'react-router-dom'
@@ -18,7 +18,7 @@ class ItemContainer extends Component {
     let books = this.state.books
     console.log(books)
     return (
-      <div> <ItemList books={this.props.books}/></div>
+      <div> <ItemList books={books}/></div>
      
     ) 
   }
