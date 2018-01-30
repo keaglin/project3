@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import axios                from 'axios'
 import { CLIENT_URL }       from '../constants'
-import {Redirect}           from 'react-router-dom'
-
-class ItemEdit extends Component {
+import { Redirect }         from 'react-router-dom'
+import ItemContainer        from './ItemContainer'
+// basically copied and pasted from ItemEdit once it was working
+class ItemAdd extends Component {
   state = {
-    book: this.props.location.state.book,
+    book: {},
     toDashboard: false
   }
 
@@ -39,13 +40,14 @@ class ItemEdit extends Component {
   // https://medium.com/codingthesmartway-com-blog/getting-started-with-axios-166cb0035237
   handleSubmit = () => {
     // console.log(CLIENT_URL)
-    axios.put(`${CLIENT_URL}/${this.state.book.title}`, {book: this.state.book})
+    axios.post(`${CLIENT_URL}/${this.state.book.title}`, {book: this.state.book})
       // .then(response => response.redirect(`/books`))
+      // .then()
       .then(this.setState({ toDashboard: true }))
-        // response => response.redirect(`/books/${this.state.book.title}`)
       .catch(err => console.log('Woops!', err))
     // axios.get(`${CLIENT_URL}/${this.state.book.title}`)
   }
+
 
   render() {
     let book = this.state.book
@@ -55,22 +57,22 @@ class ItemEdit extends Component {
         pathname: `/books/${book.title}`,
         state: {book:book}
       }}/>
+      // return <Redirect to={`/books`} />
     }
     return(
       <div>
-        <h1>{book.title}</h1>
         <div>
-            <h4>Edit Book</h4>
-            <input type="text" placeholder={book.title}   onChange={this.handleTitle} />
-            <input type="text" placeholder={book.author}  onChange={this.handleAuthor} />
-            <input type="text" placeholder={book.quality} onChange={this.handleQuality} />
-            <input type="text" placeholder={book.quote}   onChange={this.handleQuote} />
-            <input type="text" placeholder={book.owner}   onChange={this.handleOwner} />
-            <input type="button" value="Submit"           onClick={this.handleSubmit} />
+            <h4>Add Book</h4>
+            <input type="text"   placeholder='Title'            onChange={this.handleTitle} />
+            <input type="text"   placeholder='Author'           onChange={this.handleAuthor} />
+            <input type="text"   placeholder='Quality (1-5)'    onChange={this.handleQuality} />
+            <input type="text"   placeholder='Favorite Quote'   onChange={this.handleQuote} />
+            <input type="text"   placeholder='Owner'            onChange={this.handleOwner} />
+            <input type="button" value="Submit"                 onClick={this.handleSubmit} />
           </div>
       </div>
     )
   }
 }
 
-export default ItemEdit
+export default ItemAdd
