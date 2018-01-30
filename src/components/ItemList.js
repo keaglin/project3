@@ -1,5 +1,7 @@
 import React  from 'react'
 import {Link} from 'react-router-dom'
+import '../css/ItemList.css'
+
 
 const ItemList = (props) => {
   const books = props.books
@@ -19,9 +21,9 @@ const ItemList = (props) => {
       }
       </ul>
       <div>
-        <button>
+        <button className='add-book-btn'>
           <Link to = {{ pathname: `/books/add`}}>
-            Add your own?
+            Swap Your Lit
           </Link>
         </button>
       </div>

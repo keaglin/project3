@@ -25,7 +25,6 @@ class App extends Component {
             <Route path='/books/:title/edit' render={(props) => (<ItemEdit {...props} />)} />
             <Route path='/books/:title' render={(props) => (<ItemDetails {...props}/>)} />
             <Route exact path='/users' render={() => (<UserAuth />)} />
-
             <Route path='/*' render={() => (<Landing />)} />
           </Switch>
         </main>
