@@ -7,8 +7,8 @@ const Header = () => {
   return(
     <header>
       <nav>
-        <div className="nav-wrapper #5C351B brown darken-2">
-          <Link to="/" className="brand-logo-center">litswap</Link>
+        <div className="nav-wrapper #212121 grey darken-4 z-depth-3">
+          <Link to="/" className="brand-logo center">litswap</Link>
           <ul id="nav-mobile" className="left hide-on-med-and-down">
             <li><Link to="/">HOME</Link></li>
             <li><Link to="/books">Books</Link></li>

@@ -6,8 +6,8 @@ const Landing = () => {
     return (
         <div>
             <h1 className='title'>litswap</h1>
-            <h2 className ='header'>Trade & Share Literature</h2>
-            <a className='signin' href='/users'>Login/signup</a>
+            <h2 className ='header'>Swap Literature</h2>
+            <a className='login-signin' href='/users'>Login/signup</a>
             {/* <button className='enter-button'>Enter</button> */}
         </div>
     ) 
