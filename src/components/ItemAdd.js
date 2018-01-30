@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
 import axios                from 'axios'
 import { CLIENT_URL }       from '../constants'
-
+import { Redirect }         from 'react-router-dom'
+import ItemContainer        from './ItemContainer'
+// basically copied and pasted from ItemEdit once it was working
 class ItemAdd extends Component {
   state = {
-    book: {}
+    book: {},
+    toDashboard: false
   }
 
   // Help with Object.assign for setting state on nested props from Stack Overflow
@@ -39,9 +42,8 @@ class ItemAdd extends Component {
     // console.log(CLIENT_URL)
     axios.post(`${CLIENT_URL}/${this.state.book.title}`, {book: this.state.book})
       // .then(response => response.redirect(`/books`))
-      .then(console.log('book from axios.post.then is', this.state.book),
-        response => response.redirect(`/books`)
-      )
+      // .then()
+      .then(this.setState({ toDashboard: true }))
       .catch(err => console.log('Woops!', err))
     // axios.get(`${CLIENT_URL}/${this.state.book.title}`)
   }
@@ -50,6 +52,13 @@ class ItemAdd extends Component {
   render() {
     let book = this.state.book
     console.log('book is', book)
+    if (this.state.toDashboard === true) {
+      return <Redirect to={{
+        pathname: `/books/${book.title}`,
+        state: {book:book}
+      }}/>
+      // return <Redirect to={`/books`} />
+    }
     return(
       <div>
         <div>
