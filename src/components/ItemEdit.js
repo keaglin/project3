@@ -39,11 +39,19 @@ class ItemEdit extends Component {
     // console.log(CLIENT_URL)
     axios.put(`${CLIENT_URL}/${this.state.book.title}`, {book: this.state.book})
       // .then(response => response.redirect(`/books`))
-      .then(
-        // console.log('book from axios.get.then is', this.state.book)
-        axios.get(`/books/${this.state.book.title}`)
+      .then(console.log('book from axios.put.then is', this.state.book)
+        // response => response.redirect(`/books/${this.state.book.title}`)
       )
       .catch(err => console.log('Woops!', err))
+    // axios.get(`${CLIENT_URL}/${this.state.book.title}`)
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (JSON.stringify(prevState.book) === JSON.stringify(this.state.book)) axios.get(`${CLIENT_URL}/${this.state.book.title}`)
+    console.log('props is', this.props)
+    console.log('prevProps is', prevProps)
+    console.log('state is', this.state)
+    console.log('prevState is', prevState.book)
   }
 
   render() {
