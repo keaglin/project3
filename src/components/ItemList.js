@@ -21,7 +21,7 @@ const ItemList = (props) => {
       }
       </ul>
       <div>
-        <button className='add-book-btn'>
+        <button>
           <Link to = {{ pathname: `/books/add`}}>
             Swap Your Lit
           </Link>

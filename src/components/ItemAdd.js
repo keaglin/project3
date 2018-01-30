@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios                from 'axios'
 import { CLIENT_URL }       from '../constants'
+import '../css/ItemAdd.css'
 
 class ItemAdd extends Component {
   state = {
@@ -59,7 +60,7 @@ class ItemAdd extends Component {
             <input type="text"   placeholder='Quality (1-5)'    onChange={this.handleQuality} />
             <input type="text"   placeholder='Favorite Quote'   onChange={this.handleQuote} />
             <input type="text"   placeholder='Owner'            onChange={this.handleOwner} />
-            <input type="button" value="Submit"                 onClick={this.handleSubmit} />
+            <input type="button" className='submit-add-btn'     value="Submit"  onClick={this.handleSubmit} />
           </div>
       </div>
     )
