@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios                from 'axios'
 import { CLIENT_URL }       from '../constants'
 import { Redirect }         from 'react-router-dom'
+import ItemContainer        from './ItemContainer'
 // basically copied and pasted from ItemEdit once it was working
 class ItemAdd extends Component {
   state = {
@@ -52,7 +53,11 @@ class ItemAdd extends Component {
     let book = this.state.book
     console.log('book is', book)
     if (this.state.toDashboard === true) {
-      return <Redirect to='/books' />
+      return <Redirect to={{
+        pathname: `/books/${book.title}`,
+        state: {book:book}
+      }}/>
+      // return <Redirect to={`/books`} />
     }
     return(
       <div>

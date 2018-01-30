@@ -51,7 +51,10 @@ class ItemEdit extends Component {
     let book = this.state.book
     console.log('book is', book)
     if (this.state.toDashboard === true) {
-      return <Redirect to='/books' />
+      return <Redirect to={{
+        pathname: `/books/${book.title}`,
+        state: {book:book}
+      }}/>
     }
     return(
       <div>
