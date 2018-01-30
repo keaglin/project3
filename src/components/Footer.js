@@ -1,8 +1,13 @@
 import React from 'react'
 
 const Footer = () => {
+<<<<<<< HEAD
   return (
     <footer className='page-footer cyan darken-1'>
+=======
+  return(
+  <footer className="page-footer black">
+>>>>>>> 90381f2db4356d62da6ec227d43cb22c9a98893f
       {/* <div className="container">
         <div className="row">
           <div className="col l6 s12">

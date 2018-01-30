@@ -18,6 +18,13 @@ const ItemList = (props) => {
         })
       }
       </ul>
+      <div>
+        <button>
+          <Link to = {{ pathname: `/books/add`}}>
+            Add your own?
+          </Link>
+        </button>
+      </div>
     </div>
   )
 }
