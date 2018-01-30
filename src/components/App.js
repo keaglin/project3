@@ -10,7 +10,7 @@ import Header               from './Header'
 import Footer               from './Footer'
 import ItemEdit             from './ItemEdit'
 import ItemAdd              from './ItemAdd'
-import '../App.css'
+import '../css/App.css'
 
 class App extends Component {
   render() {
