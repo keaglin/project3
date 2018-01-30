@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import axios                from 'axios'
 import { CLIENT_URL }       from '../constants'
+import {Redirect}           from 'react-router-dom'
 
 class ItemEdit extends Component {
   state = {
-    book: this.props.location.state.book
+    book: this.props.location.state.book,
+    toDashboard: false
   }
 
   // Help with Object.assign for setting state on nested props from Stack Overflow
@@ -39,24 +41,18 @@ class ItemEdit extends Component {
     // console.log(CLIENT_URL)
     axios.put(`${CLIENT_URL}/${this.state.book.title}`, {book: this.state.book})
       // .then(response => response.redirect(`/books`))
-      .then(console.log('book from axios.put.then is', this.state.book)
+      .then(this.setState({ toDashboard: true }))
         // response => response.redirect(`/books/${this.state.book.title}`)
-      )
       .catch(err => console.log('Woops!', err))
     // axios.get(`${CLIENT_URL}/${this.state.book.title}`)
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    if (JSON.stringify(prevState.book) === JSON.stringify(this.state.book)) axios.get(`${CLIENT_URL}/${this.state.book.title}`)
-    console.log('props is', this.props)
-    console.log('prevProps is', prevProps)
-    console.log('state is', this.state)
-    console.log('prevState is', prevState.book)
   }
 
   render() {
     let book = this.state.book
     console.log('book is', book)
+    if (this.state.toDashboard === true) {
+      return <Redirect to='/books' />
+    }
     return(
       <div>
         <h1>{book.title}</h1>
@@ -68,7 +64,6 @@ class ItemEdit extends Component {
             <input type="text" placeholder={book.quote}   onChange={this.handleQuote} />
             <input type="text" placeholder={book.owner}   onChange={this.handleOwner} />
             <input type="button" value="Submit"           onClick={this.handleSubmit} />
-            {/* {isValid && <p>Valid!</p>} */}
           </div>
       </div>
     )

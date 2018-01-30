@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import axios                from 'axios'
 import { CLIENT_URL }       from '../constants'
-
+import { Redirect }         from 'react-router-dom'
+// basically copied and pasted from ItemEdit once it was working
 class ItemAdd extends Component {
   state = {
-    book: {}
+    book: {},
+    toDashboard: false
   }
 
   // Help with Object.assign for setting state on nested props from Stack Overflow
@@ -50,6 +52,9 @@ class ItemAdd extends Component {
   render() {
     let book = this.state.book
     console.log('book is', book)
+    if (this.state.toDashboard === true) {
+      return <Redirect to='/books' />
+    }
     return(
       <div>
         <div>
