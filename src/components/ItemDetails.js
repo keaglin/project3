@@ -1,9 +1,21 @@
 import React, { Component } from 'react'
-import {Link}               from 'react-router-dom'
+import {Link} from 'react-router-dom'
+import ItemDelete from './ItemDelete'
+import axios from 'axios'
 
-const ItemDetails = (props) => {
-  console.log(props)
-  let book = props.location.state.book
+class ItemDetails extends Component{
+  state = {
+    book: this.props.location.state.book
+  }
+  handleDelete = () => {
+    axios.delete(`/books/${this.props.location.state.book.title}`)
+    .then(res => res.redirect('/books'))
+    .catch(err => console.log(err))
+  }
+render() {
+  console.log(this.props)
+  let book = this.props.location.state.book
+  
   return (
     <div>
       <div>
@@ -15,18 +27,25 @@ const ItemDetails = (props) => {
           <p>Favorite Quote: {book.quote}</p>
           <p>Owner: {book.owner}</p>
           <button>
-            <Link to = {{
-              pathname: `/books/${book.title}/edit`, 
-              state: {book:book}
+            <Link to={{
+              pathname: `/books/${book.title}/edit`,
+              state: {book: book}
             }}>
             Edit
             </Link></button>
+          <button>
+            <Link to={{
+              pathname: `/books/${book.title}`,
+              state: {book: book}
+            }}>Delete
+        </Link></button>
+
         </div>
       </div>
 
     </div>
   )
 }
+}
 
-
-export default ItemDetails 
+export default ItemDetails
