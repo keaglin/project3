@@ -41,9 +41,8 @@ class ItemAdd extends Component {
     // console.log(CLIENT_URL)
     axios.post(`${CLIENT_URL}/${this.state.book.title}`, {book: this.state.book})
       // .then(response => response.redirect(`/books`))
-      .then(console.log('book from axios.post.then is', this.state.book),
-        response => response.redirect(`/books`)
-      )
+      // .then()
+      .then(this.setState({ toDashboard: true }))
       .catch(err => console.log('Woops!', err))
     // axios.get(`${CLIENT_URL}/${this.state.book.title}`)
   }
