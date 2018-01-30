@@ -5,7 +5,7 @@ const Header = () => {
   return(
     <header>
       <nav>
-        <div className="nav-wrapper cyan darken-1">
+        <div className="nav-wrapper blue-grey darken-1">
           <Link to="/" className="brand-logo center">LitSwap!</Link>
           <ul id="nav-mobile" className="left hide-on-med-and-down">
             <li><Link to="/">Home</Link></li>
