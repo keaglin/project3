@@ -7,3 +7,5 @@ function LogoutButton(props) {
         </button>
     )
 }
+
+export default LogoutButton

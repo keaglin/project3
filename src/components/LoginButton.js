@@ -7,3 +7,5 @@ function LoginButton(props) {
         </button>
     )
 }
+
+export default LoginButton

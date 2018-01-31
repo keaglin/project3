@@ -4,6 +4,7 @@ import ItemList             from './ItemList'
 import ItemDetails          from './ItemDetails'
 import ItemContainer        from './ItemContainer'
 import UserAuth             from './UserAuth'
+import LoginControl         from './LoginControl'
 // import books                from '../db/books'
 import { Switch, Route }    from 'react-router-dom'
 import Header               from './Header'
@@ -21,7 +22,8 @@ class App extends Component {
             <Route exact path='/' render={() => (<Landing />)}/>
             <Route exact path='/books' render={(props) => (<ItemContainer {...props}/>)}/>
             <Route exact path='/books/:title' render={(props) => (<ItemDetails {...props}/>)} />
-            <Route exact path='/users' render={() => (<UserAuth />)} />
+            <Route exact path='/users' render={() => (<LoginControl />)} />
+
             <Route path='/books/:title/edit' render={(props) => (<ItemEdit {...props} />)} />
             <Route path='/*' render={() => (<Landing />)} />
           </Switch>
