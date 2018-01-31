@@ -68,7 +68,6 @@ class ItemEdit extends Component {
             <input type="text" placeholder={book.quote}   onChange={this.handleQuote} />
             <input type="text" placeholder={book.owner}   onChange={this.handleOwner} />
             <input type="button" value="Submit"           onClick={this.handleSubmit} />
-            {/* {isValid && <p>Valid!</p>} */}
           </div>
       </div>
     )

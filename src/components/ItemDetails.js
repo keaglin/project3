@@ -20,7 +20,16 @@ const ItemDetails = (props) => {
               state: {book:book}
             }}>
             Edit
-            </Link></button>
+            </Link>
+          </button>
+          <button>
+            <Link to = {{
+              pathname: `/books/${book.title}/delete`, 
+              state: {book:book}
+            }}>
+            Delete
+            </Link>
+          </button>
         </div>
       </div>
 
