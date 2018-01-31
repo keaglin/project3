@@ -1,8 +1,8 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
+import React    from 'react'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
-  return(
+  return (
     <header>
       <nav>
         <div className="nav-wrapper blue-grey darken-1">
