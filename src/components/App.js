@@ -9,12 +9,7 @@ import { Switch, Route }    from 'react-router-dom'
 import Header               from './Header'
 import Footer               from './Footer'
 import ItemEdit             from './ItemEdit'
-<<<<<<< HEAD
 import '../css/App.css'
-=======
-import ItemAdd              from './ItemAdd'
-import '../App.css'
->>>>>>> itemedit
 
 class App extends Component {
   render() {
