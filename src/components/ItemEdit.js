@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import axios                from 'axios'
 import { CLIENT_URL }       from '../constants'
+import '../css/ItemEdit.css'
+
 
 class ItemEdit extends Component {
   state = {
@@ -67,7 +69,7 @@ class ItemEdit extends Component {
             <input type="text" placeholder={book.quality} onChange={this.handleQuality} />
             <input type="text" placeholder={book.quote}   onChange={this.handleQuote} />
             <input type="text" placeholder={book.owner}   onChange={this.handleOwner} />
-            <input type="button" value="Submit"           onClick={this.handleSubmit} />
+            <input type="button" className="edit-btn" value="submit" onClick={this.handleSubmit} />
             {/* {isValid && <p>Valid!</p>} */}
           </div>
       </div>

@@ -3,7 +3,7 @@ import '../css/Footer.css'
 
 
 const Footer = () => {
-  return(
+  return( 
   <footer className="page-footer z-depth-5">
       {/* <div className="container">
         <div className="row">

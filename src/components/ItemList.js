@@ -6,7 +6,7 @@ import '../css/ItemList.css'
 const ItemList = (props) => {
   const books = props.books
   return (
-    <div>
+    <div className='row'>
       <ul>
       {
         books.map((book, index) => {
