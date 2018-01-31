@@ -1,6 +1,9 @@
 .row {
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
+  justify-content: center;
+  flex-flow: column wrap;
+  align-items: center;
 }
 
 button {
