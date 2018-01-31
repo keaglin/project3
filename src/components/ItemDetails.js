@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import ItemDelete from './ItemDelete'
-import axios from 'axios'
-import { CLIENT_URL } from '../constants'
-import { Redirect } from 'react-router-dom'
+import { Link }             from 'react-router-dom'
+import { CLIENT_URL }       from '../constants'
+import { Redirect }         from 'react-router-dom'
+import axios                from 'axios'
+
 
 class ItemDetails extends Component {
   state = {
@@ -16,15 +16,8 @@ class ItemDetails extends Component {
     .catch(err => console.log(err))
   }
   render() {
-    // console.log(this.props)
     let book = this.state.book
-    if (this.state.toDashboard === true) {
-      return <Redirect to={{
-        pathname: `/books`
-        // ,
-        // state: {book:book}
-      }}/>
-    }
+    if (this.state.toDashboard === true) return <Redirect to='/books' />
     return (
       <div>
         <div>
