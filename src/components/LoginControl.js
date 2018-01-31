@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import LoginButton from './LoginButton.js'
 import LogoutButton from './LogoutButton.js'
-
+import SignupForm from './SignupForm.js'
 
 class LoginControl extends Component {
     constructor(props) {
@@ -32,6 +32,12 @@ class LoginControl extends Component {
 
         return (
             <div>
+                <SignupForm 
+                    onSubmit={(e) => console.log('submitted')}
+                    onChange={(e) => console.log('changed')}
+                    errors ={{email: 'invalid'}}
+                    user={{ email: 'jane@doe.com', name: 'Jane Doe' }}
+                />
                 {button}
             </div>
         )
