@@ -4,7 +4,7 @@ import '../css/Header.css'
 
 
 const Header = () => {
-  return(
+  return (
     <header>
       <nav>
         <div className="nav-wrapper z-depth-3">

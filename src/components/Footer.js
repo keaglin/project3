@@ -24,11 +24,8 @@ const Footer = () => {
       </div> */}
       {/* <div className="footer-copyright"> */}
       <div>
-        {/* <div className="container"> */}
-          <p>&copy; 2018 LBP3</p>
-        {/* <a className="grey-text text-lighten-4 right" href="#!">More Links</a> */}
-          <p>Made with &hearts; in DC.</p>
-        {/* </div> */}
+        <p>&copy; 2018 LBP3</p>
+        <p>Made with &hearts; in DC.</p>
       </div>
     </footer>
   )
