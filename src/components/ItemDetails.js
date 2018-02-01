@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import { Link }             from 'react-router-dom'
+import {Link}               from 'react-router-dom'
 import { CLIENT_URL }       from '../constants'
 import { Redirect }         from 'react-router-dom'
 import axios                from 'axios'
+import '../css/ItemDetails.css'
 
 
 class ItemDetails extends Component {
@@ -23,11 +24,13 @@ class ItemDetails extends Component {
         <div>
           <h1>{book.title}</h1>
           <div>
+            <img src={book.imageUrl} alt="book-cover" />
             <p>Written by: {book.author}</p>
             <p>Published: {book.published}</p>
             <p>Quality (out of 5): {book.quality}</p>
             <p>Favorite Quote: {book.quote}</p>
             <p>Owner: {book.owner}</p>
+            
             <button>
               <Link to={{
                 pathname: `/books/${book.title}/edit`,

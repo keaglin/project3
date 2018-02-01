@@ -3,6 +3,9 @@
   /* display: flex;
   flex-direction: column;
   justify-content: space-between; */
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column
 
 }
 footer {
@@ -37,4 +40,9 @@ footer {
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+main {
+  flex: 1 0 auto;
+
 }
