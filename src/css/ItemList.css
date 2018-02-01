@@ -1,9 +1,11 @@
-.row {
+.row li {
+  border: 1px solid gray;
+  /* min-width: 200px; */
+  margin: 10px;
+  padding: 10px;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row-reverse;
-  justify-content: center;
-  flex-flow: column wrap;
-  align-items: center;
 }
 
 button {
