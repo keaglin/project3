@@ -3,7 +3,7 @@ import axios                from 'axios'
 import { CLIENT_URL }       from '../constants'
 import {Redirect}           from 'react-router-dom'
 
-class ItemEdit extends Component {
+class RecordEdit extends Component {
   state = {
     record: this.props.location.state.record,
     toDashboard: false
@@ -57,4 +57,4 @@ class ItemEdit extends Component {
   }
 }
 
-export default ItemEdit
+export default RecordEdit

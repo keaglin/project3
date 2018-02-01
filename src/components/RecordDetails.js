@@ -5,7 +5,7 @@ import { Redirect }         from 'react-router-dom'
 import axios                from 'axios'
 
 
-class ItemDetails extends Component {
+class RecordDetails extends Component {
   state = {
     record: this.props.location.state.record,
     toDashboard: false
@@ -53,4 +53,4 @@ class ItemDetails extends Component {
   }
 }
 
-export default ItemDetails
+export default RecordDetails
