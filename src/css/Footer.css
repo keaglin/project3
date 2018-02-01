@@ -1,9 +1,10 @@
 .page-footer {
   background-color: #051725;
   color: #e9e6d4;
-  min-height: 10vh;
+  min-height: 10vh; 
   display: flex;
   flex-direction: column;
   position: relative;
+  bottom: 0; 
   padding: 1rem; 
 }
