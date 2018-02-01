@@ -23,8 +23,8 @@ class ItemDetails extends Component {
         <div>
           <h1>{record.title}</h1>
           <div>
-            <p>Written by: {record.author}</p>
-            <p>Published: {record.published}</p>
+            <p>Artist: {record.artist}</p>
+            <p>Released: {record.released}</p>
             <p>Quality (out of 5): {record.quality}</p>
             <p>Favorite Quote: {record.quote}</p>
             <p>Owner: {record.owner}</p>
