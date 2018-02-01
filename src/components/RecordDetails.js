@@ -7,39 +7,39 @@ import axios                from 'axios'
 
 class ItemDetails extends Component {
   state = {
-    book: this.props.location.state.book,
+    record: this.props.location.state.record,
     toDashboard: false
   }
   handleDelete = () => {
-    axios.delete(`${CLIENT_URL}/${this.state.book.title}`)
+    axios.delete(`${CLIENT_URL}/${this.state.record.title}`)
     .then(this.setState({ toDashboard: true }))
     .catch(err => console.log(err))
   }
   render() {
-    let book = this.state.book
-    if (this.state.toDashboard === true) return <Redirect to='/books' />
+    let record = this.state.record
+    if (this.state.toDashboard === true) return <Redirect to='/records' />
     return (
       <div>
         <div>
-          <h1>{book.title}</h1>
+          <h1>{record.title}</h1>
           <div>
-            <p>Written by: {book.author}</p>
-            <p>Published: {book.published}</p>
-            <p>Quality (out of 5): {book.quality}</p>
-            <p>Favorite Quote: {book.quote}</p>
-            <p>Owner: {book.owner}</p>
+            <p>Written by: {record.author}</p>
+            <p>Published: {record.published}</p>
+            <p>Quality (out of 5): {record.quality}</p>
+            <p>Favorite Quote: {record.quote}</p>
+            <p>Owner: {record.owner}</p>
             <button>
               <Link to={{
-                pathname: `/books/${book.title}/edit`,
-                state: {book: book}
+                pathname: `/records/${record.title}/edit`,
+                state: {record: record}
               }}>
                 Edit
               </Link>
             </button>
             <button onClick={this.handleDelete}>
               <Link to={{
-                pathname: `/books/${book.title}`,
-                state: {book: book}
+                pathname: `/records/${record.title}`,
+                state: {record: record}
               }}>
                 Delete
               </Link>
