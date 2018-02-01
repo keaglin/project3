@@ -11,7 +11,7 @@ class RecordDetails extends Component {
     toDashboard: false
   }
   handleDelete = () => {
-    axios.delete(`${CLIENT_URL}/${this.state.record.title}`)
+    axios.delete(`${CLIENT_URL}/records/${this.state.record.title}`)
     .then(this.setState({ toDashboard: true }))
     .catch(err => console.log(err))
   }
@@ -26,7 +26,7 @@ class RecordDetails extends Component {
             <p>Artist: {record.artist}</p>
             <p>Released: {record.released}</p>
             <p>Quality (out of 5): {record.quality}</p>
-            <p>Favorite Quote: {record.quote}</p>
+            <p>Favorite Song: {record.song}</p>
             <p>Owner: {record.owner}</p>
             <button>
               <Link to={{

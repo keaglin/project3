@@ -10,24 +10,24 @@ class ItemAdd extends Component {
     toDashboard: false
   }
 
-  handleTitle = (e) => {
-    if (e.target.value) this.setState({record: Object.assign(this.state.record, {title: e.target.value})})
+  handleName = (e) => {
+    if (e.target.value) this.setState({record: Object.assign(this.state.record, {name: e.target.value})})
   }
-  handleAuthor = (e) => {
-    if (e.target.value) this.setState({record: Object.assign(this.state.record, {author: e.target.value})})
+  handleArtist = (e) => {
+    if (e.target.value) this.setState({record: Object.assign(this.state.record, {artist: e.target.value})})
   }
   handleQuality = (e) => {
     if (e.target.value) this.setState({record: Object.assign(this.state.record, {quality: e.target.value})})
   }
-  handleQuote = (e) => {
-    if (e.target.value) this.setState({record: Object.assign(this.state.record, {quote: e.target.value})})
+  handleSong = (e) => {
+    if (e.target.value) this.setState({record: Object.assign(this.state.record, {song: e.target.value})})
   }
   handleOwner = (e) => {
     if (e.target.value) this.setState({record: Object.assign(this.state.record, {owner: e.target.value})})
   }
 
   handleSubmit = () => {
-    axios.post(`${CLIENT_URL}/${this.state.record.title}`, {record: this.state.record})
+    axios.post(`${CLIENT_URL}/records/${this.state.record.title}`, {record: this.state.record})
       .then(this.setState({ toDashboard: true }))
       .catch(err => console.log('Woops!', err))
   }
@@ -46,10 +46,10 @@ class ItemAdd extends Component {
       <div>
         <div>
             <h4>Add Record</h4>
-            <input type="text"   placeholder='Name'            onChange={this.handleName} />
+            <input type="text"   placeholder='Name'             onChange={this.handleName} />
             <input type="text"   placeholder='Artist'           onChange={this.handleArtist} />
             <input type="text"   placeholder='Quality (1-5)'    onChange={this.handleQuality} />
-            <input type="text"   placeholder='Favorite Quote'   onChange={this.handleQuote} />
+            <input type="text"   placeholder='Favorite Song'    onChange={this.handleSong} />
             <input type="text"   placeholder='Owner'            onChange={this.handleOwner} />
             <input type="button" value="Submit"                 onClick={this.handleSubmit} />
           </div>

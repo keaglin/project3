@@ -10,7 +10,7 @@ class RecordContainer extends Component {
   }
 
   componentDidMount() {
-    axios.get(`${CLIENT_URL}`)
+    axios.get(`${CLIENT_URL}/records`)
       .then(response => this.setState({records: response.data}))
   }
 
@@ -23,9 +23,5 @@ class RecordContainer extends Component {
     ) 
   }
 }
-
-
-
-
 
 export default RecordContainer

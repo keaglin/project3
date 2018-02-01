@@ -10,7 +10,7 @@ const RecordList = (props) => {
         records.map((record, index) => {
           return <li key={index}>
             <Link to={{
-              pathname: `/users/${record.title}`,
+              pathname: `/records/${record.title}`,
               state: {record: record}
             }}> {record.title}
             </Link>
