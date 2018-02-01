@@ -31,7 +31,7 @@ class ItemEdit extends Component {
   }
 
   handleSubmit = () => {
-    axios.put(`${CLIENT_URL}/${this.state.book.title}`, {book: this.state.book})
+    axios.put(`${CLIENT_URL}/books/${this.state.book.title}`, {book: this.state.book})
       .then(this.setState({ toDashboard: true }))
       .catch(err => console.log('Woops!', err))
   }

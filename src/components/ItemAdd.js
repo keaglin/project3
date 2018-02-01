@@ -31,7 +31,7 @@ class ItemAdd extends Component {
   }
 
   handleSubmit = () => {
-    axios.post(`${CLIENT_URL}/${this.state.book.title}`, {book: this.state.book})
+    axios.post(`${CLIENT_URL}/books/${this.state.book.title}`, {book: this.state.book})
       .then(this.setState({ toDashboard: true }))
       .catch(err => console.log('Woops!', err))
   }

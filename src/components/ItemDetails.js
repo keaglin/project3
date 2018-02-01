@@ -12,7 +12,7 @@ class ItemDetails extends Component {
     toDashboard: false
   }
   handleDelete = () => {
-    axios.delete(`${CLIENT_URL}/${this.state.book.title}`)
+    axios.delete(`${CLIENT_URL}/books/${this.state.book.title}`)
     .then(this.setState({ toDashboard: true }))
     .catch(err => console.log(err))
   }

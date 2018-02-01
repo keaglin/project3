@@ -12,6 +12,7 @@ const Header = () => {
           <ul id="nav-mobile" className="left hide-on-med-and-down">
             <li><Link to="/">HOME</Link></li>
             <li><Link to="/books">Books</Link></li>
+            <li><Link to="/records">Records</Link></li>
             <li><Link to="/users">Users</Link></li>
           </ul>
         </div>

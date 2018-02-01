@@ -12,7 +12,7 @@ class ItemContainer extends Component {
   }
 
   componentDidMount() {
-    axios.get(`${CLIENT_URL}`)
+    axios.get(`${CLIENT_URL}/books`)
       .then(response => this.setState({books: response.data}))
   }
 
