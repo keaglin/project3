@@ -24,7 +24,7 @@ class ItemDetails extends Component {
         <div>
           <h1>{book.title}</h1>
           <div>
-            <img className='img-itemdetails image'  src={book.imageUrl} alt="book-cover" />
+            <img className='img-itemdetails'  src={book.imageUrl} alt="book-cover" />
             <p>Written by: {book.author}</p>
             <p>Published: {book.published}</p>
             <p>Quality (out of 5): {book.quality}</p>

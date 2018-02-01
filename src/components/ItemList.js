@@ -16,7 +16,7 @@ const ItemList = (props) => {
               state: {book: book}
             }}> 
               <li className='list-li' key={index}>
-                <div>
+                <div className='image-wrap'>
                   <img className='img-item-list image' src={book.imageUrl} alt="cover"/>
                 </div>
                 <div>
@@ -30,7 +30,7 @@ const ItemList = (props) => {
       </ul>
       <div>
         <button>
-          <Link to ='/books/add'>Add your own?</Link>
+          <Link to ='/books/add'>Swap A Book</Link>
         </button>
       </div>
     </div>
