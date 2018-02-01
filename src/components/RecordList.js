@@ -7,12 +7,12 @@ const ItemList = (props) => {
     <div>
       <ul>
         {
-        users.map((user, index) => {
+        records.map(record, index) => {
           return <li key={index}>
             <Link to={{
-              pathname: `/users/${user.title}`,
-              state: {user: user}
-            }}> {user.title}
+              pathname: `/users/${record.title}`,
+              state: {record: record}
+            }}> {record.title}
             </Link>
           </li>
         })
@@ -20,7 +20,7 @@ const ItemList = (props) => {
       </ul>
       <div>
         <button>
-          <Link to='/users/add'>Add your own?</Link>
+          <Link to='/records/add'>Add New Record</Link>
         </button>
       </div>
     </div>
