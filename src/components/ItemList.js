@@ -7,16 +7,16 @@ const ItemList = (props) => {
     <div>
       <ul>
         {
-        books.map((book, index) => {
-          return <li key={index}>
-            <Link to={{
-              pathname: `/books/${book.title}`,
-              state: {book: book}
-            }}> {book.title}
-            </Link>
-          </li>
-        })
-      }
+          books.map((book, index) => {
+            return <li key={index}>
+              <Link to={{
+                pathname: `/books/${book.title}`,
+                state: {book: book}
+              }}> {book.title}
+              </Link>
+            </li>
+          })
+        }
       </ul>
       <div>
         <button>

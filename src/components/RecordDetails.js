@@ -11,17 +11,18 @@ class RecordDetails extends Component {
     toDashboard: false
   }
   handleDelete = () => {
-    axios.delete(`${CLIENT_URL}/records/${this.state.record.title}`)
+    axios.delete(`${CLIENT_URL}/records/${this.state.record.name}`)
     .then(this.setState({ toDashboard: true }))
     .catch(err => console.log(err))
   }
   render() {
     let record = this.state.record
+    console.log(record)
     if (this.state.toDashboard === true) return <Redirect to='/records' />
     return (
       <div>
         <div>
-          <h1>{record.title}</h1>
+          <h1>{record.name}</h1>
           <div>
             <p>Artist: {record.artist}</p>
             <p>Released: {record.released}</p>
@@ -30,7 +31,7 @@ class RecordDetails extends Component {
             <p>Owner: {record.owner}</p>
             <button>
               <Link to={{
-                pathname: `/records/${record.title}/edit`,
+                pathname: `/records/${record.name}/edit`,
                 state: {record: record}
               }}>
                 Edit
@@ -38,7 +39,7 @@ class RecordDetails extends Component {
             </button>
             <button onClick={this.handleDelete}>
               <Link to={{
-                pathname: `/records/${record.title}`,
+                pathname: `/records/${record.name}`,
                 state: {record: record}
               }}>
                 Delete
