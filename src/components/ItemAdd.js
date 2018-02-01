@@ -26,6 +26,9 @@ class ItemAdd extends Component {
   handleOwner = (e) => {
     if (e.target.value) this.setState({book: Object.assign(this.state.book, {owner: e.target.value})})
   }
+  handleImage = (e) => {
+    if (e.target.value) this.setState({book: Object.assign(this.state.book, {imageUrl: e.target.value})})
+  }
 
   handleSubmit = () => {
     axios.post(`${CLIENT_URL}/${this.state.book.title}`, {book: this.state.book})
@@ -52,6 +55,8 @@ class ItemAdd extends Component {
             <input type="text"   placeholder='Quality (1-5)'    onChange={this.handleQuality} />
             <input type="text"   placeholder='Favorite Quote'   onChange={this.handleQuote} />
             <input type="text"   placeholder='Owner'            onChange={this.handleOwner} />
+            <input type="text" placeholder='Cover'   onChange={this.handleImage} />
+
             <input type="button" className='submit-add-btn'     value="Submit"  onClick={this.handleSubmit} />
           </div>
       </div>

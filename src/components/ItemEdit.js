@@ -26,6 +26,9 @@ class ItemEdit extends Component {
   handleOwner = (e) => {
     if (e.target.value) this.setState({book: Object.assign(this.state.book, {owner: e.target.value})})
   }
+  handleImage = (e) => {
+    if (e.target.value) this.setState({book: Object.assign(this.state.book, {imageUrl: e.target.value})})
+  }
 
   handleSubmit = () => {
     axios.put(`${CLIENT_URL}/${this.state.book.title}`, {book: this.state.book})
@@ -52,6 +55,7 @@ class ItemEdit extends Component {
             <input type="text" placeholder={book.quality} onChange={this.handleQuality} />
             <input type="text" placeholder={book.quote}   onChange={this.handleQuote} />
             <input type="text" placeholder={book.owner}   onChange={this.handleOwner} />
+            <input type="text" placeholder={book.imageUrl}   onChange={this.handleImage} />
             <input type="button" className="edit-btn" value="submit" onClick={this.handleSubmit} />
           </div>
       </div>
