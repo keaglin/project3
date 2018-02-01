@@ -7,7 +7,7 @@ const ItemList = (props) => {
     <div>
       <ul>
         {
-        records.map(record, index) => {
+        records.map((record, index) => {
           return <li key={index}>
             <Link to={{
               pathname: `/users/${record.title}`,
