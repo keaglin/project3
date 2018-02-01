@@ -7,18 +7,24 @@ const ItemList = (props) => {
   const books = props.books
   return (
     <div className='row'>
-      <ul>
+      <ul className='list-container'>
         {
         books.map((book, index) => {
-          return <li key={index}>
+          return (
             <Link to={{
               pathname: `/books/${book.title}`,
               state: {book: book}
             }}> 
-            <img src={book.imageUrl} alt="cover"/>
-            {book.title}
+              <li className='list-li' key={index}>
+                <div>
+                  <img className='img-item-list image' src={book.imageUrl} alt="cover"/>
+                </div>
+                <div>
+                  <h2 className='title-list'>{book.title}</h2>
+                </div>
+              </li>
             </Link>
-          </li>
+          )
         })
       }
       </ul>
