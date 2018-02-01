@@ -9,7 +9,9 @@ nav {
   color: #e9e6d4; 
 }
 
- .brand-logo {
-  text-align: right;
+nav .brand-logo {
+  float: right;
+  padding-right: 15px;
   color: #e9e6d4;
+  position: relative;
 } 
