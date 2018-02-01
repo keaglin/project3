@@ -15,7 +15,7 @@ const ItemList = (props) => {
               pathname: `/books/${book.title}`,
               state: {book: book}
             }}> 
-              <img src={book.imageUrl} alt="cover"/>
+              <img src={book.imageUrl} alt="cover" />
               {book.title}
             </Link>
           </li>
