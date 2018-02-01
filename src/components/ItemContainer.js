@@ -2,7 +2,7 @@ import React, { Component }   from 'react'
 import { CLIENT_URL }         from '../constants'
 import ItemList               from './ItemList'
 import axios                  from 'axios'
-import { Link }                 from 'react-router-dom'
+import { Link }               from 'react-router-dom'
 
 class ItemContainer extends Component {
   state = {
@@ -10,7 +10,7 @@ class ItemContainer extends Component {
   }
 
   componentDidMount() {
-    axios.get(`${CLIENT_URL}`)
+    axios.get(`${CLIENT_URL}/books`)
       .then(response => this.setState({books: response.data}))
   }
 
