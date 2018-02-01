@@ -2,9 +2,8 @@ import React, { Component } from 'react'
 import axios                from 'axios'
 import { CLIENT_URL }       from '../constants'
 import { Redirect }         from 'react-router-dom'
-import ItemContainer        from './ItemContainer'
 
-class ItemAdd extends Component {
+class RecordAdd extends Component {
   state = {
     record: {},
     toDashboard: false
@@ -58,4 +57,4 @@ class ItemAdd extends Component {
   }
 }
 
-export default ItemAdd
+export default RecordAdd

@@ -1,8 +1,7 @@
 import React, { Component }   from 'react'
 import { CLIENT_URL }         from '../constants'
-import RecordList               from './RecordList'
+import RecordList             from './RecordList'
 import axios                  from 'axios'
-import { Link }                 from 'react-router-dom'
 
 class RecordContainer extends Component {
   state = {
