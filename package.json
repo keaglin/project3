@@ -10,7 +10,7 @@
     "react-scripts": "1.1.0"
   },
 
-  "homepage" : "",
+  "homepage" : "cynical-cracker.surge.sh",
 
   "scripts": {
     "start": "react-scripts start",
