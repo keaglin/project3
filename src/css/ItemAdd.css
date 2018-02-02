@@ -8,3 +8,7 @@
   border: none;
   cursor: pointer;
 }
+
+/* input [type= text]:not(.browser-default) {
+  background-color: red;
+} */
