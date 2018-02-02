@@ -9,13 +9,21 @@ const RecordList = (props) => {
       <ul>
         {
           records.map((record, index) => {
-            return <li key={index}>
+            return (
               <Link to={{
                 pathname: `/records/${record.name}`,
                 state: {record: record}
-              }}> {record.name}
+              }}> 
+                <li className='list-li' key={index}>
+                  <div className='image-wrap'>
+                    <img className='img-item-list image' src={record.imageUrl} alt="cover"/>
+                  </div>
+                  <div>
+                    <h2 className='title-list'>{record.name}</h2>
+                  </div>
+                </li>
               </Link>
-            </li>
+            )
           })
         }
       </ul>

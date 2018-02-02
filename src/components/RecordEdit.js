@@ -24,6 +24,9 @@ class RecordEdit extends Component {
   handleOwner = (e) => {
     if (e.target.value) this.setState({record: Object.assign(this.state.record, {owner: e.target.value})})
   }
+  handleImage = (e) => {
+    if (e.target.value) this.setState({record: Object.assign(this.state.record, {imageUrl: e.target.value})})
+  }
 
   handleSubmit = () => {
     axios.put(`${CLIENT_URL}/records/${this.state.record.name}`, {record: this.state.record})
@@ -50,6 +53,7 @@ class RecordEdit extends Component {
             <input type="text" placeholder={record.quality} onChange={this.handleQuality} />
             <input type="text" placeholder={record.song}    onChange={this.handleSong} />
             <input type="text" placeholder={record.owner}   onChange={this.handleOwner} />
+            <input type="text" placeholder='Image Link'   onChange={this.handleImage} />
             <input type="button" value="Submit"             onClick={this.handleSubmit} />
           </div>
       </div>
