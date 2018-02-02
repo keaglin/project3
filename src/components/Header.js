@@ -1,15 +1,18 @@
-import React    from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react'
+import {Link} from 'react-router-dom'
+import '../css/Header.css'
+
 
 const Header = () => {
   return (
     <header>
       <nav>
-        <div className="nav-wrapper blue-grey darken-1">
-          <Link to="/" className="brand-logo center">LitSwap!</Link>
+        <div className="nav-wrapper z-depth-3">
+          <Link to="/" className="brand-logo">litswap</Link>
           <ul id="nav-mobile" className="left hide-on-med-and-down">
-            <li><Link to="/">Home</Link></li>
+            <li><Link to="/">HOME</Link></li>
             <li><Link to="/books">Books</Link></li>
+            <li><Link to="/records">Records</Link></li>
             <li><Link to="/users">Users</Link></li>
           </ul>
         </div>

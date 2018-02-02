@@ -21,3 +21,4 @@ Swap
 User avatars
 User detail view with user details and items owned
 past swaps? 
+One random book quote randomly being displayed on landing page after each refresh of the page

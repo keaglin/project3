@@ -1,0 +1,14 @@
+.submit-add-btn {
+  background-color: #051725;
+  color: #e9e6d4;
+  position: relative;
+  margin-top: 25px;
+  padding: 10px 24px;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+}
+
+/* input [type= text]:not(.browser-default) {
+  background-color: red;
+} */

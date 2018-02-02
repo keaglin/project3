@@ -1,26 +1,36 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import '../css/ItemList.css'
+
 
 const ItemList = (props) => {
   const books = props.books
   return (
-    <div>
-      <ul>
+    <div className='row'>
+      <ul className='list-container'>
         {
         books.map((book, index) => {
-          return <li key={index}>
+          return (
             <Link to={{
               pathname: `/books/${book.title}`,
               state: {book: book}
-            }}> {book.title}
+            }}> 
+              <li className='list-li' key={index}>
+                <div className='image-wrap'>
+                  <img className='img-item-list image' src={book.imageUrl} alt="cover"/>
+                </div>
+                <div>
+                  <h2 className='title-list'>{book.title}</h2>
+                </div>
+              </li>
             </Link>
-          </li>
+          )
         })
       }
       </ul>
       <div>
         <button>
-          <Link to ='/books/add'>Add your own?</Link>
+          <Link to ='/books/add'>Swap A Book</Link>
         </button>
       </div>
     </div>

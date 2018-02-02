@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import axios                from 'axios'
 import { CLIENT_URL }       from '../constants'
+import '../css/ItemAdd.css'
 import { Redirect }         from 'react-router-dom'
-import ItemContainer        from './ItemContainer'
 
 class ItemAdd extends Component {
   state = {
@@ -25,9 +25,12 @@ class ItemAdd extends Component {
   handleOwner = (e) => {
     if (e.target.value) this.setState({book: Object.assign(this.state.book, {owner: e.target.value})})
   }
+  handleImage = (e) => {
+    if (e.target.value) this.setState({book: Object.assign(this.state.book, {imageUrl: e.target.value})})
+  }
 
   handleSubmit = () => {
-    axios.post(`${CLIENT_URL}/${this.state.book.title}`, {book: this.state.book})
+    axios.post(`${CLIENT_URL}/books/${this.state.book.title}`, {book: this.state.book})
       .then(this.setState({ toDashboard: true }))
       .catch(err => console.log('Woops!', err))
   }
@@ -51,7 +54,9 @@ class ItemAdd extends Component {
             <input type="text"   placeholder='Quality (1-5)'    onChange={this.handleQuality} />
             <input type="text"   placeholder='Favorite Quote'   onChange={this.handleQuote} />
             <input type="text"   placeholder='Owner'            onChange={this.handleOwner} />
-            <input type="button" value="Submit"                 onClick={this.handleSubmit} />
+            <input type="text" placeholder='Cover'   onChange={this.handleImage} />
+
+            <input type="button" className='submit-add-btn'     value="Submit"  onClick={this.handleSubmit} />
           </div>
       </div>
     )

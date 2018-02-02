@@ -2,7 +2,8 @@ import React, { Component }   from 'react'
 import { CLIENT_URL }         from '../constants'
 import ItemList               from './ItemList'
 import axios                  from 'axios'
-import { Link }                 from 'react-router-dom'
+import '../css/ItemContainer.css'
+
 
 class ItemContainer extends Component {
   state = {
@@ -10,7 +11,7 @@ class ItemContainer extends Component {
   }
 
   componentDidMount() {
-    axios.get(`${CLIENT_URL}`)
+    axios.get(`${CLIENT_URL}/books`)
       .then(response => this.setState({books: response.data}))
   }
 
@@ -18,7 +19,7 @@ class ItemContainer extends Component {
     let books = this.state.books
     console.log(books)
     return (
-      <div> <ItemList books={books}/></div>
+      <div className='book-list'> <ItemList books={books}/></div>
      
     ) 
   }

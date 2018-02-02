@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import axios                from 'axios'
 import { CLIENT_URL }       from '../constants'
+import '../css/ItemEdit.css'
+
 import {Redirect}           from 'react-router-dom'
 
 class ItemEdit extends Component {
@@ -24,9 +26,12 @@ class ItemEdit extends Component {
   handleOwner = (e) => {
     if (e.target.value) this.setState({book: Object.assign(this.state.book, {owner: e.target.value})})
   }
+  handleImage = (e) => {
+    if (e.target.value) this.setState({book: Object.assign(this.state.book, {imageUrl: e.target.value})})
+  }
 
   handleSubmit = () => {
-    axios.put(`${CLIENT_URL}/${this.state.book.title}`, {book: this.state.book})
+    axios.put(`${CLIENT_URL}/books/${this.state.book.title}`, {book: this.state.book})
       .then(this.setState({ toDashboard: true }))
       .catch(err => console.log('Woops!', err))
   }
@@ -50,7 +55,8 @@ class ItemEdit extends Component {
             <input type="text" placeholder={book.quality} onChange={this.handleQuality} />
             <input type="text" placeholder={book.quote}   onChange={this.handleQuote} />
             <input type="text" placeholder={book.owner}   onChange={this.handleOwner} />
-            <input type="button" value="Submit"           onClick={this.handleSubmit} />
+            <input type="text" placeholder={book.imageUrl}   onChange={this.handleImage} />
+            <input type="button" className="edit-btn" value="submit" onClick={this.handleSubmit} />
           </div>
       </div>
     )

@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Righteous');
+
+nav {
+  color: pink;
+}
+
+.nav-wrapper {
+  background-color: #051725;
+  color: #e9e6d4; 
+}
+
+nav .brand-logo {
+  float: right;
+  padding-right: 15px;
+  color: #e9e6d4;
+  position: relative;
+} 
