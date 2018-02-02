@@ -3,7 +3,6 @@ import axios                from 'axios'
 import { CLIENT_URL }       from '../constants'
 import '../css/ItemAdd.css'
 import { Redirect }         from 'react-router-dom'
-import ItemContainer        from './ItemContainer'
 
 class ItemAdd extends Component {
   state = {
