@@ -21,7 +21,7 @@ class ItemDetails extends Component {
     if (this.state.toDashboard === true) return <Redirect to='/books' />
     return (
       <div>
-        <div>
+        <div> {/* double div seems extra */}
           <h1>{book.title}</h1>
           <div>
             <img className='img-itemdetails'  src={book.imageUrl} alt="book-cover" />
@@ -30,7 +30,7 @@ class ItemDetails extends Component {
             <p>Quality (out of 5): {book.quality}</p>
             <p>Favorite Quote: {book.quote}</p>
             <p>Owner: {book.owner}</p>
-            
+            {/* consider nesting the button elements inside of the Links so that the whole button serves as a link. Currently the button only redirects if you click the text. This could be confusing for the user. */}
             <button>
               <Link to={{
                 pathname: `/books/${book.title}/edit`,

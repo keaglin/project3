@@ -10,6 +10,10 @@ class ItemAdd extends Component {
     toDashboard: false
   }
 
+  // this is a little repetitive. Check out the react docs on handling multiple inputs. 
+  // https://reactjs.org/docs/forms.html#handling-multiple-inputs
+  // if you add a name attribute to each input you can use a single handle change method for all of them.
+  
   handleTitle = (e) => {
     if (e.target.value) this.setState({book: Object.assign(this.state.book, {title: e.target.value})})
   }
