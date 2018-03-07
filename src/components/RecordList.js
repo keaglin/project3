@@ -1,10 +1,9 @@
-import React  from 'react'
-import {Link} from 'react-router-dom'
+import React    from 'react'
+import { Link } from 'react-router-dom'
 import '../css/RecordList.css'
 
 const RecordList = (props) => {
   const records = props.records
-  console.log(records)
   return (
     <div className='recrow'>
       <ul className='record-list-container'>

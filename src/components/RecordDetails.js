@@ -18,7 +18,7 @@ class RecordDetails extends Component {
   render() {
     let record = this.state.record
     console.log(record)
-    if (this.state.toDashboard === true) return <Redirect to='/records' />
+    if (this.state.toDashboard) return <Redirect to='/records' />
     return (
       <div>
         <div>

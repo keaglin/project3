@@ -40,7 +40,7 @@ class RecordEdit extends Component {
     if (this.state.toDashboard === true) {
       return <Redirect to={{
         pathname: `/records/${record.name}`,
-        state: {record:record}
+        state: {record: record}
       }}/>
     }
     return (
@@ -53,7 +53,7 @@ class RecordEdit extends Component {
             <input type="text" placeholder={record.quality} onChange={this.handleQuality} />
             <input type="text" placeholder={record.song}    onChange={this.handleSong} />
             <input type="text" placeholder={record.owner}   onChange={this.handleOwner} />
-            <input type="text" placeholder='Image Link'   onChange={this.handleImage} />
+            <input type="text" placeholder='Image Link'     onChange={this.handleImage} />
             <input type="button" value="Submit"             onClick={this.handleSubmit} />
           </div>
       </div>

@@ -18,7 +18,7 @@ class ItemDetails extends Component {
   }
   render() {
     let book = this.state.book
-    if (this.state.toDashboard === true) return <Redirect to='/books' />
+    if (this.state.toDashboard) return <Redirect to='/books' />
     return (
       <div>
         <div>

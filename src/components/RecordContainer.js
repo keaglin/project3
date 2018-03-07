@@ -17,8 +17,7 @@ class RecordContainer extends Component {
     let records = this.state.records
     console.log(records)
     return (
-      <div> <RecordList records={records}/></div>
-     
+      <div><RecordList records={records}/></div>
     ) 
   }
 }
