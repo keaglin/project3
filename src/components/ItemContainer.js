@@ -2,6 +2,7 @@ import React, { Component }   from 'react'
 import { CLIENT_URL }         from '../constants'
 import ItemList               from './ItemList'
 import axios                  from 'axios'
+import {Link}                 from 'react-router-dom'
 import '../css/ItemContainer.css'
 
 

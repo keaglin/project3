@@ -24,6 +24,7 @@ class RecordDetails extends Component {
         <div>
           <h1>{record.name}</h1>
           <div>
+          <img className='img-itemdetails'  src={record.imageUrl} alt="cover" />
             <p>Artist: {record.artist}</p>
             <p>Released: {record.released}</p>
             <p>Quality (out of 5): {record.quality}</p>
