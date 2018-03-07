@@ -17,7 +17,6 @@ class ItemContainer extends Component {
 
   render () {
     let books = this.state.books
-    console.log(books)
     return (
       <div className='book-list'> <ItemList books={books}/></div>
      

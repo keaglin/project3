@@ -18,12 +18,13 @@ class RecordDetails extends Component {
   render() {
     let record = this.state.record
     console.log(record)
-    if (this.state.toDashboard === true) return <Redirect to='/records' />
+    if (this.state.toDashboard) return <Redirect to='/records' />
     return (
       <div>
         <div>
           <h1>{record.name}</h1>
           <div>
+          <img className='img-itemdetails'  src={record.imageUrl} alt="cover" />
             <p>Artist: {record.artist}</p>
             <p>Released: {record.released}</p>
             <p>Quality (out of 5): {record.quality}</p>

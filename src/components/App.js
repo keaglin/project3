@@ -32,7 +32,7 @@ class App extends Component {
             <Route path='/records/:title/edit' render={(props) => (<RecordEdit {...props} />)} />
             <Route path='/records/:title'      render={(props) => (<RecordDetails {...props}/>)} />
             <Route exact path='/users'         render={()      => (<UserAuth />)} />
-            <Route path='/*' render={() => (<Landing />)} />
+            <Route path='/*'                   render={()      => (<Landing />)} />
           </Switch>
         </main>
         <Footer />

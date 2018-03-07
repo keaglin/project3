@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import axios                from 'axios'
 import { CLIENT_URL }       from '../constants'
-import '../css/ItemAdd.css'
 import { Redirect }         from 'react-router-dom'
+import '../css/ItemAdd.css'
 
 class ItemAdd extends Component {
   state = {
@@ -38,7 +38,6 @@ class ItemAdd extends Component {
 
   render() {
     let book = this.state.book
-    console.log('book is', book)
     if (this.state.toDashboard === true) {
       return <Redirect to={{
         pathname: `/books/${book.title}`,
@@ -54,7 +53,7 @@ class ItemAdd extends Component {
             <input type="text"   placeholder='Quality (1-5)'    onChange={this.handleQuality} />
             <input type="text"   placeholder='Favorite Quote'   onChange={this.handleQuote} />
             <input type="text"   placeholder='Owner'            onChange={this.handleOwner} />
-            <input type="text" placeholder='Cover'   onChange={this.handleImage} />
+            <input type="text"   placeholder='Cover'            onChange={this.handleImage} />
 
             <input type="button" className='submit-add-btn'     value="Submit"  onClick={this.handleSubmit} />
           </div>
